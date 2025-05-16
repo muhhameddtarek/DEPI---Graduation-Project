@@ -2,7 +2,6 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
 import java.util.Arrays;
@@ -12,7 +11,7 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-    private SoftAssert softAssert=new SoftAssert();
+    private final SoftAssert softAssert=new SoftAssert();
     // Top Section
     By pageTitle = By.xpath("//h2[normalize-space()='Features Items']");
     By pageLogo = By.xpath("//img[@alt='Website for automation practice']");
@@ -54,7 +53,7 @@ public class HomePage extends BasePage {
     By womenList = By.id("Women");
     By clickableWomenList = By.xpath("//div[@id='Women']//a[contains(@href, 'category_products')]");
     By womenListValue = By.xpath("//div[@id='Women']//ul");
-/* Subgroups of Women list */
+/* Subgroups of the Women list */
     By dressPage = By.xpath("//h2[@class='title text-center']");
     By topsPage = By.xpath("//h2[@class='title text-center']");
     By sareePage = By.xpath("//h2[@class='title text-center']");
@@ -64,7 +63,7 @@ public class HomePage extends BasePage {
     By menList = By.id("Men");
     By menListValue = By.xpath("//div[@id='Men']//ul");
     By clickableMenList = By.xpath("//div[@id='Men']//a[contains(@href, 'category_products')]");
-/* Subgroups of Men list */
+/* Subgroups of the Men list */
     By tShirtPage = By.xpath("//h2[@class='title text-center']");
     By jeansPage = By.xpath("//h2[@class='title text-center']");
 
@@ -228,7 +227,7 @@ public class HomePage extends BasePage {
 
 
 // Category Section Method
-    /* Upper Left side */
+    /* Upper-Left side */
     public boolean checkCategoryTitleDisplay(){
         return checkingDisplay(categoryTitle);
     }
@@ -607,6 +606,7 @@ public class HomePage extends BasePage {
     public void clickYoutubeChannelButton(){
        waitUntilElementIsVisible(youtubeTutorialButton,5);
         clickOn(youtubeTutorialButton);
+        waitUntilElementIsVisible(youtubeChannelName,5);
     }
     public int getFeatureProductsCount() {
         waitUntilElementIsVisible(featuredProducts, 5);
