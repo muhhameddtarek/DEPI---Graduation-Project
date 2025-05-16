@@ -40,6 +40,7 @@ public class ExcelReader {
             }
         }
         wb.close();
+        fis.close();
         return arrayExcelData;
     }
 
